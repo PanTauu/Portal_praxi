@@ -17,24 +17,22 @@ final class Authenticator implements Nette\Security\Authenticator
         $this->passwords = $passwords;
     }
 
-    public function Authenticate(string $user, string $password) : Nette\Security\SimpleIdentity
+    public function authenticate(string $user, string $password) : Nette\Security\SimpleIdentity
     {
-        $row = $this->database->table('students')
+        $row = $this->database->table('users')
              ->where('user_name', $user)
              ->fetch();
-
-        $dbPassword = $this->database->table('students')
-                  ->where('password', $password)
-                  ->fetch();
 
         if (!$row) {
             throw new Nette\Security\AuthenticationException('User not found.');
         }
 
-        if (!$this->passwords->verify($password, $dbPassword)) {
+        if (!$this->passwords->verify($password, $row->password)) {
             throw new Nette\Security\AuthenticationException('Invalid password.');
         }
 
-        return new SimpleIdentity($row->ID_student, ['username' => $row->user_name]);
+        return new SimpleIdentity(
+            $row->ID_user,null, ['name' => $row->first_name]
+        );
     }
 }
