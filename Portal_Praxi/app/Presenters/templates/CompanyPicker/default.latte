@@ -1,1 +1,151 @@
-<h1>Přihlášen uživatel {$user->getIdentity()->name}</h1>
+{block content}
+   <head><!----===== Boxicons CSS ===== -->
+      <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+   </head>
+   <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="{$basePath}/user-image.jpg" alt=""> <!--DOPLNIT OBRAZEK-->
+                </span>
+
+                <div class="text logo-text">
+                    <span class="name">{$user->getIdentity()->fullname}</span>
+                    <span class="profession">Žák IT4</span>
+                </div>
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+
+                <li class="search-box">
+                    <i class='bx bx-search icon'></i>
+                    <input type="text" placeholder="Search...">
+                </li>
+
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-home-alt icon' ></i>
+                            <span class="text nav-text">Registrace</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-bar-chart-alt-2 icon' ></i>
+                            <span class="text nav-text">Přehled firem</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="">
+                    <a href="#">
+                        <i class='bx bx-log-out icon' ></i>
+                        <span class="text nav-text">Odhlásit se</span>
+                    </a>
+                </li>
+
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-moon icon moon'></i>
+                        <i class='bx bx-sun icon sun'></i>
+                    </div>
+                    <span class="mode-text text">Temný režim</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+
+            </div>
+        </div>
+
+    </nav>
+
+    <section class="home">
+        <div class="text">Souvislé praxe</div>
+        <div class="form">
+            <div class="inputfield">
+               <label>Jméno</label>
+               <input type="text" class="input">
+            </div>
+             <div class="inputfield">
+               <label>Příjmení</label>
+               <input type="text" class="input">
+            </div>
+            <div class="inputfield">
+               <label>Adresa</label>
+               <input type="password" class="input">
+            </div>
+           <div class="inputfield">
+               <label>Škola</label>
+               <input type="password" class="input">
+            </div>
+             <div class="inputfield">
+               <label>Pohlaví</label>
+               <div class="custom_select">
+                 <select>
+                    <option value=""></option>
+                    <option value="male">Muž</option>
+                    <option value="female">Žena</option>
+                    <option value="">Nechci uvádět</option>
+                 </select>
+               </div>
+            </div>
+             <div class="inputfield">
+               <label>Emailová adresa</label>
+               <input type="text" class="input">
+            </div>
+            <div class="inputfield">
+                <label>Telefonní číslo</label>
+                <input type="text" class="input">
+             </div>
+             <div class="inputfield">
+                <label>Město</label>
+                <input type="text" class="input">
+             </div>
+             <div class="inputfield">
+                <label>PSČ</label>
+                <input type="text" class="input">
+             </div>
+           <div class="inputfield">
+               <label>Adresa Pracoviště</label>
+               <input type="text" class="input">
+            </div>
+            <div class="inputfield">
+                <label>Firma</label>
+                <div class="custom_select_company">
+                  <select>
+                     <option value=""></option>
+                     <option value="">StaMPi, spol. s.r.o., IČO:26043076</option>
+                     <option value="">AGROSTROJ Pelhřimov, a.s, IČO:00009971</option>
+                     <option value="">První pozice s.r.o., IČO</option>
+                     <option value=""></option>
+                     <option value=""></option>
+                     <option value=""></option>
+                     <option value=""></option>
+                  </select>
+                </div>
+             </div>
+           <div class="inputfield">
+               <label>IČO</label>
+               <input type="text" class="input">
+            </div>
+           <div class="inputfield">
+               <label>Kontakt</label>
+               <input type="text" class="input">
+            </div>
+           <div class="inputfield">
+             <input type="submit" value="Exportovat do PDF" class="btn">
+           </div>
+    </section>
+
+
+    <script src="script.js"></script>
+{/block}
