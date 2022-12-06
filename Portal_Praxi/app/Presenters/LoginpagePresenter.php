@@ -4,24 +4,11 @@ declare(strict_types=1);
 
 namespace App\Presenters;
 
-use App\Model\Authenticator;
 use Nette;
 use Nette\Application\UI\Form;
 
 final class LoginpagePresenter extends Nette\Application\UI\Presenter
 {
-    private Nette\Database\Explorer $database;
-    private Nette\Security\Passwords $passwords;
-    private $authenticator;
-
-    public function __construct(Nette\Database\Explorer $database, Nette\Security\Passwords $passwords,
-                                 Authenticator $authenticator)
-    {
-        $this->database = $database;
-        $this->passwords = $passwords;
-        $this->authenticator = $authenticator;
-    }
-
     protected function createComponentLoginForm() : Form
     {
         $form = new Form();
@@ -29,7 +16,6 @@ final class LoginpagePresenter extends Nette\Application\UI\Presenter
              ->setRequired();
         $form->addPassword('password', 'Heslo')
              ->setRequired();
-        $form->addSubmit('login', 'Přihlásit se');
         $form->onSuccess[] = [$this, 'formSucceeded'];
         return $form;
     }

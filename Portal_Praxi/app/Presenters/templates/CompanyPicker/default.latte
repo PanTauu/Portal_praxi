@@ -45,7 +45,7 @@
 
             <div class="bottom-content">
                 <li class="">
-                    <a href="#">
+                    <a href="http://localhost:8080">  <!-- odhlášení -->
                         <i class='bx bx-log-out icon' ></i>
                         <span class="text nav-text">Odhlásit se</span>
                     </a>
@@ -70,82 +70,60 @@
 
     <section class="home">
         <div class="text">Souvislé praxe</div>
-        <div class="form">
-            <div class="inputfield">
-               <label>Jméno</label>
-               <input type="text" class="input">
-            </div>
-             <div class="inputfield">
-               <label>Příjmení</label>
-               <input type="text" class="input">
-            </div>
-            <div class="inputfield">
-               <label>Adresa</label>
-               <input type="password" class="input">
-            </div>
-           <div class="inputfield">
-               <label>Škola</label>
-               <input type="password" class="input">
-            </div>
-             <div class="inputfield">
-               <label>Pohlaví</label>
-               <div class="custom_select">
-                 <select>
-                    <option value=""></option>
-                    <option value="male">Muž</option>
-                    <option value="female">Žena</option>
-                    <option value="">Nechci uvádět</option>
-                 </select>
-               </div>
-            </div>
-             <div class="inputfield">
-               <label>Emailová adresa</label>
-               <input type="text" class="input">
-            </div>
-            <div class="inputfield">
-                <label>Telefonní číslo</label>
-                <input type="text" class="input">
-             </div>
-             <div class="inputfield">
-                <label>Město</label>
-                <input type="text" class="input">
-             </div>
-             <div class="inputfield">
-                <label>PSČ</label>
-                <input type="text" class="input">
-             </div>
-           <div class="inputfield">
-               <label>Adresa Pracoviště</label>
-               <input type="text" class="input">
-            </div>
-            <div class="inputfield">
-                <label>Firma</label>
-                <div class="custom_select_company">
-                  <select>
-                     <option value=""></option>
-                     <option value="">StaMPi, spol. s.r.o., IČO:26043076</option>
-                     <option value="">AGROSTROJ Pelhřimov, a.s, IČO:00009971</option>
-                     <option value="">První pozice s.r.o., IČO</option>
-                     <option value=""></option>
-                     <option value=""></option>
-                     <option value=""></option>
-                     <option value=""></option>
-                  </select>
-                </div>
-             </div>
-           <div class="inputfield">
-               <label>IČO</label>
-               <input type="text" class="input">
-            </div>
-           <div class="inputfield">
-               <label>Kontakt</label>
-               <input type="text" class="input">
-            </div>
-           <div class="inputfield">
-             <input type="submit" value="Exportovat do PDF" class="btn">
-           </div>
+        {form registrationForm}
+        <table>
+         <tr n:foreach="$form->controls as $name => $field">
+	         <th>{label $name /}<th>
+	         <td>{input $name}</td>
+	         <td n:ifcontent>{inputError $name}</td>
+             </tr>
+       </table>
+       {/form}
     </section>
 
+    <div id="contract-container">
+        <div id="contract">
+            <p>
+               ODBORNÁ PRAXE
+V letošním školním roce v období
+Od 21. 11. do 2. 12. 2022 v rozsahu počtu dní: 10
+budou žáci třídy IT4 konat Odbornou praxi na pracovištích fyzických a právnických osob (dle ŠVP   Studijního oboru – INFORMAČNÍ TECHNOLOGIE 18-20-M/01)
+Odborná praxe je souvislá, tj. žáci se účastní každý den po dobu 6 hodin (60 minutových) ve výše uvedeném období. Po skončení této odborné praxe žáci vypracují ve stanovené době zprávu o pobytu na odborné praxi, ve které se zabývají vymezeným tématem, nebo prezentují svá díla. Tato práce má charakter odborné zprávy
+ a je součástí klasifikace na zvolené téma praxe. Prezentace + textová zpráva.
+Bez řádného absolvování této Odborné praxe nelze dále hodnotit žáka z hlediska postupu do dalšího ročníku.    Žáci si každý den vyplňují do předem jim vydané tabulky náplň práce, která je potvrzena instruktorem včetně jeho závěrečného hodnocení. Instruktor provádí dozor nad žákem a jeho vedení. Instruktor vede nejvýše 6 žáků.
+Škola umožňuje žákům (např. dle bydliště žáka, dle budoucího zaměstnání a jiné), aby si sami našli vhodnou (koresponduje s obsahem jejich učiva daného oboru studia) firmu (organizaci) – rozhoduje vedoucí učitel praktického vyučování. V tomto případě jsou nutné údaje pro sepsání SMLOUVY O PRAKTICKÉM VYUČOVÁNÍ (viz níže)
+doručit nejpozději do: 21. 10. 2022                                                       komu: svému učiteli praxe
+Následně podepsané smlouvy a pověření instruktorů musí být doručené nejpozději do: 4. 11. 2022
+V opačném případě SPŠ a SOU Pelhřimov sama najde vhodné umístění žáka (u fyzické, či právnické osoby).
+Doprava do místa konání Odborné praxe je dovolena pouze veřejným dopravní prostředkem!!
+V případě zjištěné neúčasti žáka v uvedeném rozsahu na Odborné praxi nebo hrubé porušení kázně žáka na Odborné praxi škola může dle §65 odst. Zákona 561/2004 ve znění pozdějších předpisů uskutečnit Odbornou praxi i v období školních prázdnin.
+
+Jméno příjmení žáka, datum narození: …………………………………………………….
+
+………………………………………………………………………………
+  Jméno, příjmení (hůlkově) a podpis zákonného zástupce, popřípadě plnoletého žáka
+-------------------------------------------
+Údaje k odborné praxi pro sepsání smlouvy a pověření
+ (postačí čitelný otisk razítka – pokud obsahuje všechny údaje)
+Smlouva musí obsahovat:
+-	Název a přesná adresa firmy včetně ulice: ………………………………………………….
+-	……………………………………………………………………………………………….
+-	IČO: …………………………………………….
+-	místo konání odborné praxe (přesná adresa, včetně ulice): ………………………………….
+-    zastoupená vedoucím pracovníkem – jméno a příjmení: ……………………………………
+-    jméno pověřeného zaměstnance (instruktor): ……………………… telefon: ……………….
+Pověření zaměstnance (instruktora) musí obsahovat
+-	jméno a příjmení pověřeného zaměstnance, funkce u firmy: ………………………………………………………………………………………………
+-	datum narození: …………............................
+-	tel.: ……………………………….…, email.:……………………………………
+-	adresa pracoviště: …………………………………………………………………………
+
+S osobními údaji bude nakládáno podle Nařízení (EU) 2016/679 (GDPR)
+
+            </p>
+        </div>
+    </div>
 
     <script src="script.js"></script>
+
 {/block}

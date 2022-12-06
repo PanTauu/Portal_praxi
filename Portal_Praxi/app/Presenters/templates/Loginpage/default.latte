@@ -1,8 +1,22 @@
 {block title} Portál praxí {/block}
 {block content}
 
-   {control loginForm}
+   <div class="center">
+     <h1>Login</h1>
+   {form loginForm}
+       <div class="txt_field" n:foreach="$form->controls as $name => $field">
+           <td>{input $name}</td>
+	       <th>{label $name /}<th>
+	       <td n:ifcontent>{inputError $name}</td>
+       </div>
+       <div>
+          <a class="pass">Zapomněli jste heslo?</a>
+       </div>
+       <div>
+          <input type="submit" name="login" value="Přihlásit se">
+       </div>
+   {/form}
+   </div>
 
 {/block}
-
 

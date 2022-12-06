@@ -284,7 +284,6 @@ body.dark .switch::before{
 .home{
     position: absolute;
     top: 0;
-    top: 0;
     left: 250px;
     height: 100vh;
     width: calc(100% - 250px);
@@ -292,10 +291,10 @@ body.dark .switch::before{
     transition: var(--tran-05);
 }
 .home .text{
-    font-size: 30px;
+    font-size: 20px;
     font-weight: 500;
     color: var(--text-color);
-    padding: 12px 60px;
+    padding: 12px 100px;
 }
 
 .sidebar.close ~ .home{
@@ -315,47 +314,47 @@ body.dark .home .text{
     text-align: center;
 }
 
-.home .form{
+.home #frm-registrationForm {
     width: 100%;
 }
 
-.home .form .inputfield{
+.home #frm-registrationForm td {
     margin-bottom: 15px;
     display: flex;
     align-items: center;
 }
 
-.home .form .inputfield label{
+.home #frm-registrationForm label{
     width: 200px;
     color: #757575;
     margin-right: -20px;
     font-size: 14px;
 }
 
-.home .form .inputfield .input,
-.home .form .inputfield .textarea{
-    width: 20%;
+.home #frm-registrationForm td input,
+.home #frm-registrationForm td{
+    width: 150%;
     outline: none;
-    border: 1px solid #d5dbd9;
+    border: none;
     font-size: 15px;
-    padding: 8px 10px;
+    padding: 9px 10px;
     border-radius: 3px;
     transition: all 0.3s ease;
 }
 
-.home .form .inputfield .textarea{
+.home #frm-registrationForm td .textarea{
     width: 50%;
     height: 125px;
     resize: none;
 }
 
-.home .form .inputfield .custom_select{
+.home #frm-registrationForm td select {
     position: relative;
     width: 10%;
     height: 37px;
 }
 
-.home .form .inputfield .custom_select:before{
+.home #frm-registrationForm td select:before{
     content: "";
     position: absolute;
     top: 12px;
@@ -365,7 +364,7 @@ body.dark .home .text{
     pointer-events: none;
 }
 
-.home .form .inputfield .custom_select select{
+.home #frm-registrationForm td select{
     -webkit-appearance: none;
     -moz-appearance:   none;
     appearance:        none;
@@ -380,17 +379,17 @@ body.dark .home .text{
 }
 
 
-.home .form .inputfield .input:focus,
-.home .form .inputfield .textarea:focus,
+.home #frm-registrationForm td input:focus,
+.home #frm-registrationForm td .textarea:focus,
 
 
 
-.home .form .inputfield p{
+.home #frm-registrationForm td p{
     font-size: 14px;
     color: #757575;
 }
-.home .form .inputfield .btn{
-    width: 30%;
+.home #frm-registrationForm td .button{
+    width: 100%;
     padding: 8px 10px;
     font-size: 15px;
     border: 0px;
@@ -401,33 +400,33 @@ body.dark .home .text{
     outline: none;
 }
 
-.home .form .inputfield .btn:hover{
+.home #frm-registrationForm td .button:hover{
     background: #7e73f8;
 }
 
-.home .form .inputfield:last-child{
+.home #frm-registrationForm td:last-child{
     margin-bottom: 0;
 }
 
 @media (max-width:420px) {
-    .home .form .inputfield{
+    .home #frm-registrationForm input {
         flex-direction: column;
         align-items: flex-start;
     }
-    .home .form .inputfield label{
+    .home #frm-registrationForm input label{
         margin-bottom: 5px;
     }
-    .home .form .inputfield.terms{
+    .home #frm-registrationForm input.terms{
         flex-direction: row;
     }
 }
-.home .form .inputfield .custom_select_company{
+.home #frm-registrationForm input #frm-registrationForm-company {
     position: relative;
     width: 20%;
     height: 37px;
 }
 
-.home .form .inputfield .custom_select_company:before{
+.home #frm-registrationForm input #frm-registrationForm-company:before{
     content: "";
     position: absolute;
     top: 12px;
@@ -437,7 +436,7 @@ body.dark .home .text{
     pointer-events: none;
 }
 
-.home .form .inputfield .custom_select_company select{
+.home #frm-registrationForm input #frm-registrationForm-company select{
     -webkit-appearance: none;
     -moz-appearance:   none;
     appearance:        none;
@@ -447,6 +446,27 @@ body.dark .home .text{
     border: 0px;
     padding: 8px 10px;
     font-size: 15px;
-    border: 1px solid #d5dbd9;
     border-radius: 3px;
+}
+
+/*----contract----*/
+#contract-container {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    background-color: white;
+    margin-left: 50%;
+}
+
+#contract {
+    position: relative;
+    border: #18191a solid 1px;
+    padding: 17px;
+    width: 72%;
+    margin-left: 9%;
+    margin-top: 20px;
+}
+
+#contract p {
+    font-size: 15px;
 }
