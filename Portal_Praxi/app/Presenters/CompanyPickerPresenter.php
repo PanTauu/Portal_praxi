@@ -27,12 +27,7 @@ final class CompanyPickerPresenter extends Nette\Application\UI\Presenter
             ->setRequired();
         $form->addText('address', 'Adresa')
              ->setRequired();
-        $gender = [
-            'M' => 'Muž',
-            'Z' => 'Žena'
-        ];
-        $form->addSelect('gender', 'Pohlaví:', $gender);
-        $form->onSuccess[] = [$this, 'formSucceeded'];
+        $form->addText('birthdate', 'Datum narození');
         $form->addEmail("email", "Emailová adresa: ")
              ->setRequired();
         $form->addText("phone", "Telefonní číslo")
