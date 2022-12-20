@@ -13,9 +13,27 @@ final class LoadCompanies
         $this->database = $database;
     }
 
-    public function getCompanies()
+    // projde firmy z tabulky a vrátí pole
+    public function getCompanies(): array
     {
-        return $this->database->table('companies');
+        $companies = array();
+        $dbData = $this->database->table('companies');
+
+        foreach ($dbData as $data) {
+            $companies[] = $data->name . ',  ' . $data->town;
+        }
+        return $companies;
+    }
+
+    public function get(): array
+    {
+        $companies = array();
+        $dbData = $this->database->table('companies');
+
+        foreach ($dbData as $data) {
+            $companies[] = $data->name . ',  ' . $data->town;
+        }
+        return $companies;
     }
 }
 

@@ -25,28 +25,26 @@ final class CompanyPickerPresenter extends Nette\Application\UI\Presenter
             ->setRequired();
         $form->addText('surname', 'Příjmení')
             ->setRequired();
-        $form->addText('address', 'Adresa')
+        $form->addText('birthdate', 'Datum narození')
              ->setRequired();
-        $form->addText('birthdate', 'Datum narození');
-        $form->addEmail("email", "Emailová adresa: ")
-             ->setRequired();
-        $form->addText("phone", "Telefonní číslo")
-             ->setRequired();
-        $form->addText("town", "Město")
-            ->setRequired();
-        $form->addText("townNumber", "PSČ")
-            ->setRequired();
-        // naplnit hodnotami z databáze
         $companies = [
-
+            $this->companies->getCompanies()
         ];
-        $form->addSelect("company", "Firma:", $companies)
+        $form->addSelect("company", "Firma", $companies)
             ->setRequired();
         $form->addText("companyAddress", "Adreda pracoviště")
             ->setRequired();
         $form->addText("companyID", "IČO")
             ->setRequired();
-        $form->addText("contact", "Kontakt")
+        $form->addText("companyWorker", "Vedoucí pracovník")
+            ->setRequired();
+        $form->addText("instructor", "Instruktor")
+            ->setRequired();
+        $form->addText("instructorPhoneNumber", "tel. číslo instruktora")
+            ->setRequired();
+        $form->addText("instructorBirthDate", "Datum narození instruktora")
+            ->setRequired();
+        $form->addText("email", "Email instruktora")
             ->setRequired();
         $form->addSubmit('export', 'Exportovat do PDF');
         $form->onSuccess[] = [$this, 'formSucceeded'];

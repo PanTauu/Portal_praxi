@@ -6,7 +6,7 @@
         <header>
             <div class="image-text">
                 <span class="image">
-                    <img src="{$basePath}/user-image.jpg" alt=""> <!--DOPLNIT OBRAZEK-->
+                    <img src="{$basePath}/user-image.jpg" alt="">
                 </span>
 
                 <div class="text logo-text">
@@ -100,10 +100,10 @@
             Doprava do místa konání Odborné praxe je dovolena pouze veřejným dopravní prostředkem!!<br>
             V případě zjištěné neúčasti žáka v uvedeném rozsahu na Odborné praxi nebo hrubé porušení kázně žáka na Odborné praxi škola může dle</strong> §65 odst. Zákona 561/2004 ve znění pozdějších předpisů uskutečnit Odbornou praxi<strong style="font-family:'Times New Roman', Times, serif"> i v období školních prázdnin.</strong><br>
             <br>
-            <strong style="font-family:'Times New Roman', Times, serif">Jméno příjmení žáka, datum narození: </tr></strong> <label style="padding-left: 4em;padding-right: 1em" id="student-name"></label>
+            <strong style="font-family:'Times New Roman', Times, serif">Jméno příjmení žáka, datum narození: </tr></strong> <label style="padding-left: 1em;padding-right: 0.5em" id="student-name"></label>
             <label style="padding-right: 1em" id="student-surname"></label><label style="padding-right: 1em" id="student-birthdate"></label>
             <br><br>
-            <label id="student-name" style="padding-right: 25em"></label><br>
+            <label id="student-fullname" style="padding-right: 25em">{strtoupper($user->getIdentity()->fullname)}</label><br>
               <strong style="font-family: 'Times New Roman';font-style: italic;"";>Jméno, příjmení (hůlkově) a podpis zákonného zástupce, popřípadě plnoletého žáka</strong><br>
             -------------------------------------------<br>
             <center style="font-family:'Times New Roman', Times, serif"><u style="font-family:'Times New Roman', Times, serif; font-weight: bold;">Údaje k odborné praxi pro sepsání smlouvy a pověření </u></center>
@@ -125,9 +125,7 @@
             </p>
        </div>
     </div>
-    <div id="btn-container">
-       <button type="button" id="">Click Me!</button>
-    </div>
+
 
 
     <!--přenesení zadávaných údajů do smlouvy-->
@@ -137,6 +135,7 @@
             document.getElementById("student-name"),
             document.getElementById("student-surname"),
             document.getElementById("student-birthdate"),
+            document.getElementById("student-fullname"),
             document.getElementById("company-identification-number"),
             document.getElementById("company-address"),
             document.getElementById("company-lead-worker"),
@@ -150,37 +149,40 @@
         const inputTextFields = [
             document.getElementById("frm-registrationForm-name"),
             document.getElementById("frm-registrationForm-surname"),
-            document.getElementById("frm-registrationForm-address"),
-            document.getElementById("frm-registrationForm-gender"),
-            document.getElementById("frm-registrationForm-email"),
-            document.getElementById("frm-registrationForm-phone"),
-            document.getElementById("frm-registrationForm-town"),
-            document.getElementById("frm-registrationForm-townNumber"),
-            document.getElementById("frm-registrationForm-company"),
+            document.getElementById("frm-registrationForm-birthdate"),
+            document.getElementById("frm-registrationForm-company"),  // combo box
             document.getElementById("frm-registrationForm-companyAddress"),
-            document.getElementById("company-instructor-address")
+            document.getElementById("frm-registrationForm-companyID"),
+            document.getElementById("frm-registrationForm-companyWorker"),
+            document.getElementById("frm-registrationForm-instructor"),
+            document.getElementById("frm-registrationForm-instructorPhoneNumber"),
+            document.getElementById("frm-registrationForm-instructorBirthDate"),
+            document.getElementById("frm-registrationForm-email")
         ];
 
+        // jmeno
         inputTextFields[0].oninput = function () {
              outputLabels[0].innerHTML = inputTextFields[0].value;
+             outputLabels[3].innerHTML = inputTextFields[0].value;
         }
+
+        // prijmeni
         inputTextFields[1].oninput = function () {
              outputLabels[1].innerHTML = inputTextFields[1].value;
         }
+        // datum narozeni
         inputTextFields[2].oninput = function () {
              outputLabels[2].innerHTML = inputTextFields[2].value;
         }
-        inputTextFields[3].oninput = function () {
-             outputLabels[3].innerHTML = inputTextFields[3].value;
-        }
-        inputTextFields[4].oninput = function () {
-             outputLabels[4].innerHTML = inputTextFields[4].value;
-        }
+
+        // jmeno, prijmeni
         inputTextFields[0].oninput = function () {
-             outputLabels[0].innerHTML = inputTextFields[0].value;
+             outputLabels[3].innerHTML = inputTextFields[0].value;
         }
-        inputTextFields[0].oninput = function () {
-             outputLabels[0].innerHTML = inputTextFields[0].value;
+
+        let select = document.getElementById("frm-registrationForm-company");
+        select.onselect = function() {
+
         }
 
 
