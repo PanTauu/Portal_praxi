@@ -21,33 +21,31 @@ final class CompanyPickerPresenter extends Nette\Application\UI\Presenter
     protected function createComponentRegistrationForm() : Form
     {
         $form = new Form();
-        $form->addText('name', "Jméno")
-            ->setRequired();
-        $form->addText('surname', 'Příjmení')
-            ->setRequired();
-        $form->addText('birthdate', 'Datum narození')
-             ->setRequired();
+        $form->addText('name', "Jméno");
+        $form->addText('surname', 'Príjmení');
+        $form->addText('birthdate', 'Datum narození');
         $companies = [
             $this->companies->getCompanies()
         ];
-        $form->addSelect("company", "Firma", $companies)
-            ->setRequired();
-        $form->addText("companyAddress", "Adreda pracoviště")
-            ->setRequired();
-        $form->addText("companyID", "IČO")
-            ->setRequired();
-        $form->addText("companyWorker", "Vedoucí pracovník")
-            ->setRequired();
-        $form->addText("instructor", "Instruktor")
-            ->setRequired();
-        $form->addText("instructorPhoneNumber", "tel. číslo instruktora")
-            ->setRequired();
-        $form->addText("instructorBirthDate", "Datum narození instruktora")
-            ->setRequired();
-        $form->addText("email", "Email instruktora")
-            ->setRequired();
+        $form->addSelect("company", "Firma", $companies);
+        $form->addText("companyAddress", "Adreda pracoviště");
+        $form->addText("companyID", "IČO");
+        $form->addText("companyWorker", "Vedoucí pracovník");
+        $form->addText("instructor", "Instruktor");
+        $form->addText("instructorPhoneNumber", "tel. číslo instruktora");
+        $form->addText("instructorBirthDate", "Datum narození instruktora");
+        $form->addText("email", "Email instruktora");
         $form->addSubmit('export', 'Exportovat do PDF');
         $form->onSuccess[] = [$this, 'formSucceeded'];
         return $form;
+    }
+
+    public function formSucceeded() : void
+    {
+        try {
+            $this->redirect('CompanyPicker:default');
+        } catch (Nette\Security\AuthenticationException $e) {
+            $this->flashMessage("Export selhal");
+        }
     }
 }

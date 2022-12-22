@@ -1,6 +1,22 @@
 {block content}
-   <head><!----===== Boxicons CSS ===== -->
+   <head><!----===== Boxicons CSS =====-->
       <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+     <script>
+     function generatePDF(filename, content) {
+             var pdf = new jsPDF({
+                orientation: 'p',
+                unit: 'mm',
+                format: 'a4'
+             });
+            // textlines = pdf.setFont('Times-Roman')
+             pdf.setFontSize(12);
+             let verticalOffset = 0.5;
+             pdf.text( content.innerText,0.5, verticalOffset + 12 / 72, content)
+             verticalOffset += (textlines.length += 0.5) * 12 / 72;
+             pdf.save(filename + '.pdf');
+         }
+     </script>
    </head>
    <nav class="sidebar close">
         <header>
@@ -37,7 +53,7 @@
                     <li class="nav-link">
                         <a href="#">
                             <i class='bx bx-bar-chart-alt-2 icon' ></i>
-                            <span class="text nav-text">Přehled firem</span>
+                            <span class="text nav-text">Prehled firem</span>
                         </a>
                     </li>
                 </ul>
@@ -89,46 +105,46 @@
             <p style="font-family:'Times New Roman', Times, serif">
             V letošním školním roce<strong style="font-family:'Times New Roman', Times, serif"> v období</strong> <br>
             <strong style="font-family:'Times New Roman', Times, serif">Od 21. 11. do 2. 12. 2022 v rozsahu počtu dní</strong>: 10<br>
-            budou žáci třídy IT4 konat <strong style="font-family:'Times New Roman', Times, serif">praxi na pracovištích fyzických a právnických osob (dle ŠVP   Studijního oboru – INFORMAČNÍ TECHNOLOGIE 18-20-M/01)</strong><br>
+            budou žáci trídy IT4 konat <strong style="font-family:'Times New Roman', Times, serif">praxi na pracovištích fyzických a právnických osob (dle ŠVP   Studijního oboru – INFORMAČNÍ TECHNOLOGIE 18-20-M/01)</strong><br>
             Odborná praxe je souvislá, tj. žáci se účastní každý den po dobu 6 hodin (60 minutových) ve výše uvedeném období. Po skončení této odborné praxe žáci vypracují ve stanovené době zprávu o pobytu na odborné praxi, ve které se zabývají vymezeným tématem, nebo prezentují svá díla. Tato práce má charakter odborné zprávy
              a je součástí klasifikace na zvolené téma praxe. Prezentace + textová zpráva.<br>
-            Bez řádného absolvování této Odborné praxe <strong style="font-family:'Times New Roman', Times, serif">nelze</strong> dále hodnotit žáka z hlediska postupu do dalšího ročníku.    Žáci si každý den vyplňují do předem jim vydané tabulky náplň práce, která je potvrzena instruktorem včetně jeho závěrečného hodnocení. Instruktor provádí dozor nad žákem a jeho vedení. Instruktor vede nejvýše 6 žáků.<br>
-            Škola umožňuje žákům (např. dle bydliště žáka, dle budoucího zaměstnání a jiné), aby si sami našli vhodnou (koresponduje s obsahem jejich učiva daného oboru studia) firmu (organizaci) – rozhoduje vedoucí učitel praktického vyučování. V tomto případě jsou <strong style="font-family:'Times New Roman', Times, serif">nutné údaje pro sepsání SMLOUVY O PRAKTICKÉM VYUČOVÁNÍ (viz níže) </strong><br>
+            Bez rádného absolvování této Odborné praxe <strong style="font-family:'Times New Roman', Times, serif">nelze</strong> dále hodnotit žáka z hlediska postupu do dalšího ročníku.    Žáci si každý den vyplňují do predem jim vydané tabulky náplň práce, která je potvrzena instruktorem včetně jeho závěrečného hodnocení. Instruktor provádí dozor nad žákem a jeho vedení. Instruktor vede nejvýše 6 žáků.<br>
+            Škola umožňuje žákům (napr. dle bydliště žáka, dle budoucího zaměstnání a jiné), aby si sami našli vhodnou (koresponduje s obsahem jejich učiva daného oboru studia) firmu (organizaci) – rozhoduje vedoucí učitel praktického vyučování. V tomto prípadě jsou <strong style="font-family:'Times New Roman', Times, serif">nutné údaje pro sepsání SMLOUVY O PRAKTICKÉM VYUČOVÁNÍ (viz níže) </strong><br>
             <strong style="font-family:'Times New Roman', Times, serif">doručit nejpozději do: 21. 10. 2022<span style="padding-left:280px;font-family:'Times New Roman', Times, serif"">                                                    komu: svému učiteli praxe<br>
-            Následně podepsané smlouvy a pověření instruktorů musí být doručené nejpozději do: 4. 11. 2022<br>
-            V opačném případě SPŠ a SOU Pelhřimov sama najde vhodné umístění žáka (u fyzické, či právnické osoby).<br>
-            Doprava do místa konání Odborné praxe je dovolena pouze veřejným dopravní prostředkem!!<br>
-            V případě zjištěné neúčasti žáka v uvedeném rozsahu na Odborné praxi nebo hrubé porušení kázně žáka na Odborné praxi škola může dle</strong> §65 odst. Zákona 561/2004 ve znění pozdějších předpisů uskutečnit Odbornou praxi<strong style="font-family:'Times New Roman', Times, serif"> i v období školních prázdnin.</strong><br>
+            Následně podepsané smlouvy a pověrení instruktorů musí být doručené nejpozději do: 4. 11. 2022<br>
+            V opačném prípadě SPŠ a SOU Pelhrimov sama najde vhodné umístění žáka (u fyzické, či právnické osoby).<br>
+            Doprava do místa konání Odborné praxe je dovolena pouze verejným dopravní prostredkem!!<br>
+            V prípadě zjištěné neúčasti žáka v uvedeném rozsahu na Odborné praxi nebo hrubé porušení kázně žáka na Odborné praxi škola může dle</strong> §65 odst. Zákona 561/2004 ve znění pozdějších predpisů uskutečnit Odbornou praxi<strong style="font-family:'Times New Roman', Times, serif"> i v období školních prázdnin.</strong><br>
             <br>
-            <strong style="font-family:'Times New Roman', Times, serif">Jméno příjmení žáka, datum narození: </tr></strong> <label style="padding-left: 1em;padding-right: 0.5em" id="student-name"></label>
+            <strong style="font-family:'Times New Roman', Times, serif">Jméno príjmení žáka, datum narození: </tr></strong> <label style="padding-left: 1em;padding-right: 0.5em" id="student-name"></label>
             <label style="padding-right: 1em" id="student-surname"></label><label style="padding-right: 1em" id="student-birthdate"></label>
             <br><br>
             <label id="student-fullname" style="padding-right: 25em">{strtoupper($user->getIdentity()->fullname)}</label><br>
-              <strong style="font-family: 'Times New Roman';font-style: italic;"";>Jméno, příjmení (hůlkově) a podpis zákonného zástupce, popřípadě plnoletého žáka</strong><br>
+              <strong style="font-family: 'Times New Roman';font-style: italic;"";>Jméno, príjmení (hůlkově) a podpis zákonného zástupce, poprípadě plnoletého žáka</strong><br>
             -------------------------------------------<br>
-            <center style="font-family:'Times New Roman', Times, serif"><u style="font-family:'Times New Roman', Times, serif; font-weight: bold;">Údaje k odborné praxi pro sepsání smlouvy a pověření </u></center>
+            <center style="font-family:'Times New Roman', Times, serif"><u style="font-family:'Times New Roman', Times, serif; font-weight: bold;">Údaje k odborné praxi pro sepsání smlouvy a pověrení </u></center>
              <center style="font-family:'Times New Roman', Times, serif">(postačí čitelný otisk razítka – pokud obsahuje všechny údaje)</center>
              <u style="font-family:'Times New Roman', Times, serif; font-weight: bold;"> Smlouva musí obsahovat: </u><br>
-            -	Název a přesná adresa firmy včetně ulice: <label style="padding-right: 7em" id="company-name-address"></label><br>
+            -	Název a presná adresa firmy včetně ulice: <label style="padding-right: 7em" id="company-name-address"></label><br>
             -	<label style="padding-right: 41em"></label><br><br>
             -	IČO: <label id="company-identification-number" style="padding-right: 34em"></label><br>
-            -	místo konání odborné praxe (přesná adresa, včetně ulice): <label id="company-address" style=""></label><br>
-            -    zastoupená vedoucím pracovníkem – jméno a příjmení: <label id="company-lead-worker" style="padding-right: 12em"></label><br><br>
-            -    jméno pověřeného zaměstnance (instruktor): <label id="company-instructor" style="padding-right: 3em"></label> telefon: <label id="company-instructor-phone" style="padding-right: 5em"></label><br>
-            <u style="font-family:'Times New Roman', Times, serif; font-weight: bold;">Pověření zaměstnance (instruktora) musí obsahovat </u><br>
-            -	jméno a příjmení pověřeného zaměstnance, funkce u firmy: <br> <label id="company-instructor-name" style="padding-left: 17em;padding-right: 20em"></label><br>
+            -	místo konání odborné praxe (presná adresa, včetně ulice): <label id="company-address" style=""></label><br>
+            -    zastoupená vedoucím pracovníkem – jméno a príjmení: <label id="company-lead-worker" style="padding-right: 12em"></label><br><br>
+            -    jméno pověreného zaměstnance (instruktor): <label id="company-instructor" style="padding-right: 3em"></label> telefon: <label id="company-instructor-phone" style="padding-right: 5em"></label><br>
+            <u style="font-family:'Times New Roman', Times, serif; font-weight: bold;">Pověrení zaměstnance (instruktora) musí obsahovat </u><br>
+            -	jméno a príjmení pověreného zaměstnance, funkce u firmy: <br> <label id="company-instructor-name" style="padding-left: 17em;padding-right: 20em"></label><br>
             -	datum narození: <label id="company-instructor-birthdate" style="padding-right: 12em;padding-left: 2em"></label><br>
             -	tel.:<label id="company-instructor-phone" style="padding-right: 12em;padding-left: 2em"></label> email.: <label id="company-instructor-email" style="padding-right: 12em;padding-left: 2em"></label><br>
             -	adresa pracoviště: <label id="company-instructor-address" style="padding-right: 12em;padding-left: 2em"></label><br>
 
-            <center style="font-family:'Times New Roman', Times, serif">S osobními údaji bude nakládáno podle Nařízení (EU) 2016/679 (GDPR)</center>
+            <center style="font-family:'Times New Roman', Times, serif">S osobními údaji bude nakládáno podle Narízení (EU) 2016/679 (GDPR)</center>
             </p>
        </div>
     </div>
 
 
 
-    <!--přenesení zadávaných údajů do smlouvy-->
+    <!--prenesení zadávaných údajů do smlouvy-->
     <script>
 
         const outputLabels = [
@@ -163,7 +179,6 @@
         // jmeno
         inputTextFields[0].oninput = function () {
              outputLabels[0].innerHTML = inputTextFields[0].value;
-             outputLabels[3].innerHTML = inputTextFields[0].value;
         }
 
         // prijmeni
@@ -175,17 +190,14 @@
              outputLabels[2].innerHTML = inputTextFields[2].value;
         }
 
-        // jmeno, prijmeni
-        inputTextFields[0].oninput = function () {
-             outputLabels[3].innerHTML = inputTextFields[0].value;
+
+        // na klik zahájí stahování 
+        var btn = document.querySelector('input[type=submit]');
+        var content = document.getElementById("contract");
+
+        btn.onclick = function() {
+            generatePDF({$user->getIdentity()->fullname}, content.textContent);  
         }
-
-        let select = document.getElementById("frm-registrationForm-company");
-        select.onselect = function() {
-
-        }
-
-
 
     </script>
 

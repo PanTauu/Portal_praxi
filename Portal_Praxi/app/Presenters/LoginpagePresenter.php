@@ -20,15 +20,15 @@ final class LoginpagePresenter extends Nette\Application\UI\Presenter
         return $form;
     }
 
-    // pokud je formulář úspěšně odeslán
+    // pokud je formulár úspěšně odeslán
     public function formSucceeded(Form $form, \stdClass $data) : void
     {
-        // pokud údaje sedí, přihlásí uživatele a přesměruje do výběru firem
+        // pokud údaje sedí, prihlásí uživatele a presměruje do výběru firem
         try {
             $this->getUser()->login($data->username, $data->password);
             $this->redirect('CompanyPicker:default');
         } catch (Nette\Security\AuthenticationException $e) {
-            $form->addError('Nesprávné přihlašovací jméno nebo heslo.');
+            $form->addError('Nesprávné prihlašovací jméno nebo heslo.');
         }
     }
 }
