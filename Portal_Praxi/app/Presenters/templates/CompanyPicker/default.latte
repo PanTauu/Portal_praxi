@@ -9,11 +9,8 @@
                 unit: 'mm',
                 format: 'a4'
              });
-            // textlines = pdf.setFont('Times-Roman')
              pdf.setFontSize(12);
-             let verticalOffset = 0.5;
-             pdf.text( content.innerText,0.5, verticalOffset + 12 / 72, content)
-             verticalOffset += (textlines.length += 0.5) * 12 / 72;
+             pdf.text(content, 10, 10)
              pdf.save(filename + '.pdf');
          }
      </script>
@@ -154,6 +151,7 @@
             document.getElementById("student-fullname"),
             document.getElementById("company-identification-number"),
             document.getElementById("company-address"),
+            document.getElementById("company-name-address"),
             document.getElementById("company-lead-worker"),
             document.getElementById("company-instructor"),
             document.getElementById("company-instructor-name"),
@@ -190,6 +188,39 @@
              outputLabels[2].innerHTML = inputTextFields[2].value;
         }
 
+        // firma
+         document.getElementById("frm-registrationForm-company").addEventListener("change", getOption);
+
+
+         function getOption() {
+            select = document.getElementById("frm-registrationForm-company");
+            output = select.value;
+            document.getElementById("company-name-address").textContent = output;
+         }  
+
+         inputTextFields[4].oninput = function () {
+             outputLabels[5].innerHTML = inputTextFields[4].value;
+        }
+
+         inputTextFields[5].oninput = function () {
+             outputLabels[4].innerHTML = inputTextFields[5].value;
+        }
+
+          inputTextFields[5].oninput = function () {
+             outputLabels[4].innerHTML = inputTextFields[5].value;
+        }
+
+         inputTextFields[6].oninput = function () {
+             outputLabels[7].innerHTML = inputTextFields[6].value;
+        }
+
+         inputTextFields[7].oninput = function () {
+             outputLabels[8].innerHTML = inputTextFields[7].value;
+        }
+  
+        inputTextFields[8].oninput = function () {
+             outputLabels[11].innerHTML = inputTextFields[8].value;
+        }
 
         // na klik zahájí stahování 
         var btn = document.querySelector('input[type=submit]');
