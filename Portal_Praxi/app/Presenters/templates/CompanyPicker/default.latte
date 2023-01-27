@@ -83,8 +83,10 @@
 
     </nav>
 
-    <section class="home">
-        <div class="text">Souvislé praxe</div>
+    <div id="flex">
+    <!--<section class="home">-->
+        <!--<div class="text">Souvislé praxe</div>-->
+      <div id="form">
         {form registrationForm}
         <table>
          <tr n:foreach="$form->controls as $name => $field">
@@ -93,8 +95,9 @@
 	         <td n:ifcontent>{inputError $name}</td>
              </tr>
        </table>
+      </div>
        {/form}
-    </section>
+   <!-- </section>-->
 
    <div id="contract-container">
         <div id="contract" style="font-family:'Times New Roman', Times, serif">
@@ -138,8 +141,8 @@
             </p>
        </div>
     </div>
-
-
+    </div>
+ 
 
     <!--prenesení zadávaných údajů do smlouvy-->
     <script>
